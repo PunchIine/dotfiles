@@ -14,38 +14,38 @@ live_config_reload: true
 colors:
   # Default colors
   primary:
-    background: "0x24292e"
-    foreground: "0xd1d5da"
+    background: "0x171d23"
+    foreground: "0xffffff"
+
+  # Cursor colors
+  cursor:
+    text: "0xfafafa"
+    cursor: "0x008b94"
 
   # Normal colors
   normal:
-    black: "0x24292e"
-    red: "0xf14c4c"
-    green: "0x23d18b"
-    yellow: "0xe2e210"
-    blue: "0x3b8eea"
-    magenta: "0xbc3fbc"
-    cyan: "0x29b7da"
-    white: "0xd1d5da"
+    black: "0x333f4a"
+    red: "0xd95468"
+    green: "0x8bd49c"
+    blue: "0x539afc"
+    magenta: "0xb62d65"
+    cyan: "0x70e1e8"
+    white: "0xb7c5d3"
 
   # Bright colors
   bright:
-    black: "0x666666"
-    red: "0xf14c4c"
-    green: "0x23d18b"
-    yellow: "0xf5f543"
-    blue: "0x3b8eea"
-    magenta: "0xd670d6"
-    cyan: "0x29b7da"
-    white: "0xd1d5da"
-
-  indexed_colors:
-    - { index: 16, color: "0xd18616" }
-    - { index: 17, color: "0xf14c4c" }
+    black: "0x41505e"
+    red: "0xd95468"
+    green: "0x8bd49c"
+    yellow: "0xebbf83"
+    blue: "0x5ec4ff"
+    magenta: "0xe27e8d"
+    cyan: "0x70e1e8"
+    white: "0xffffff"
 
 # 字体设置为等宽字体，可以用命令 fc-list 查看你系统的字体
 font:
-  size: 14
+  size: 16
 
   normal:
     family: JetBrainsMono Nerd Font
@@ -61,4 +61,3 @@ font:
 
 cursor:
   style: underline
-theme: github_dark

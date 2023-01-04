@@ -1,10 +1,10 @@
 set $mod Mod1
 
-new_window pixel 0
+new_window pixel 2
 new_float normal
 
 #
-for_window [all] border pixel 0
+for_window [all] border pixel 2
 
 hide_edge_borders none
 
@@ -22,8 +22,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start program launcher
-# bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id dmenu_run
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -269,13 +269,13 @@ mode "$mode_gaps_outer" {
 #bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
 #bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 
-# exec pulseaudio -D
-# exec_always --no-startup-id pulseaudio -D
+exec pulseaudio -D
 exec flameshot
 exec --no-startup-id fcitx
-exec_always --no-startup-id killall picom; sleep 0.2; picom --experimental-backends --config /home/onion/.config/picom/picom.conf
+exec_always --no-startup-id killall picom; sleep 0.2; picom --experimental-backends -b
+#exec_always --no-startup-id killall polybar; sleep 0.2; $HOME/.config/polybar/i3wmthemer_bar_launch.sh
 exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/*
-exec_always --no-startup-id $HOME/.config/polybar/runbar.sh
+
 # bindsym $mod+i exec flameshot gui
 bindsym --release $mod+i exec --no-startup-id flameshot gui
 # bindsym $mod+c exec google-chrome-stable
@@ -284,6 +284,32 @@ bindsym $mod+m exec marktext
 bindsym $mod+p exec pa-applet
 
 #gap
-gaps inner 7
-gaps outer 1
-# smart_gaps on
+gaps inner 13
+gaps outer 17
+smart_gaps on
+
+bar {
+    # status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    status_command i3status
+    #output eDP1
+    #tray_output primary
+
+    position top
+    mode hide
+    workspace_buttons yes
+
+    tray_padding 0
+    separator_symbol "|"
+
+    colors {
+    background #285477
+    statusline #dedede
+    separator #2d2d2d
+    focused_workspace #636e88 #285de7 #dedfdg
+    active_workspace #556677 #234567 #56ef67
+    inactive_workspace #636d72 #2d2d2d #dedede
+    urgent_workspace #ffffff #900000 #d23d32
+    }
+
+    # height 20
+}
